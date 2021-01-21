@@ -1,5 +1,7 @@
 package cn.freestyle.exceptionhandledemo;
 
+import cn.freestyle.exceptionhandledemo.exception.ResponseException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,9 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(BusinessLogicException.class)
+    @ExceptionHandler(ResponseException.class)
     @ResponseBody
-    public Response businessExceptionHandler(BusinessLogicException e) {
-        return Response.fail(e.getCode(),e.getMessage());
+    public ResponseEntity<Response> businessExceptionHandler(ResponseException e) {
+        Response body = Response.fail(e.getCode(), e.getMessage());
+        return new ResponseEntity<>(body,e.getHttpStatus());
     }
 }

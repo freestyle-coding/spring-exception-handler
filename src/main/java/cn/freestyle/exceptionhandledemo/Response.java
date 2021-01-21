@@ -2,6 +2,10 @@ package cn.freestyle.exceptionhandledemo;
 
 import lombok.Getter;
 
+/**
+ *
+ * @author freestyle
+ */
 @Getter
 public class Response<T> {
 
