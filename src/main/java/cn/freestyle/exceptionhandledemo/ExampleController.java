@@ -3,6 +3,10 @@ package cn.freestyle.exceptionhandledemo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ *
+ * @author freestyle
+ */
 @Controller
 public class ExampleController {
 

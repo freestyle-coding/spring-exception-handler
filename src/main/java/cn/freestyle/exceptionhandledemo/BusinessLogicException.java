@@ -1,6 +1,9 @@
 package cn.freestyle.exceptionhandledemo;
 
-
+/**
+ *
+ * @author freestyle
+ */
 public class BusinessLogicException extends RuntimeException{
 
     private int code;
